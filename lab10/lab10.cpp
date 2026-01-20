@@ -5,7 +5,7 @@ using namespace std;
 void insertNode(int key, string data);
 void displayList();
 void menu();
-void usunElement();
+void deleteElement(Node* elementToRemov);
 
 struct Node { //kod 10_01
     int key = -1;
@@ -60,9 +60,14 @@ int main() {
 			break;
         case 2://usun element
 			displayList();
+			deleteElement(nullptr);
+			break;
+        case 3://wyswietl liste
+			displayList();
+            break;
+        default:
+			return 0;
         }
-        
-
     }
 
     /*
@@ -75,9 +80,6 @@ int main() {
         insertNode(key, data);
     }
     */
-
-    cout << "The entire list:" << endl;
-    displayList();
 }
 
 void deleteElement(Node* elementToRemov) {
